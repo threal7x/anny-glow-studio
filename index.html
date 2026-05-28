@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Anny Glow - Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos do rodapé e ícones */
+        .links-sociais-rodape {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        .link-social-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #5c4a3c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+        .link-social-item:hover {
+            color: #ffffff;
+        }
+        .link-social-item svg {
+            width: 32px;
+            height: 32px;
+            fill: #5c4a3c;
+            transition: fill 0.2s ease, transform 0.2s ease;
+        }
+        .link-social-item:hover svg {
+            fill: #e1306c;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topo do site -->
+    <header class="topo-bege">
+        <div class="texto-central">
+            <h1>Seja bem-vinda</h1>
+            <p>ao atendimento Anny Glow</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="miolo-branco-site">
+        
+        <!-- Onda de cima -->
+        <div class="onda-recorte-topo">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://w3.org">
+                <path d="M1200,120 C900,50 600,140 300,70 C150,40 50,80 0,90 L0,0 L1200,0 Z" class="cor-da-onda-bege-topo"></path>
+            </svg>
+        </div>
+
+        <!-- Container das caixas -->
+        <div class="page-container">
+            <main class="main-content">
+
+                <!-- Grid de Procedimentos -->
+                <section class="procedures-container">
+                    <h2 class="section-title">⭐ ESCOLHA O SEU PROCEDIMENTO ⭐</h2>
+                    <div class="procedures-grid">
+                        <div class="card" onclick="selecionarProcedimento(this, 'Corte Feminino')">
+                            <h3>Corte Feminino</h3>
+                            <p class="price">R$ 60</p>
+                        </div>
+                        <div class="card" onclick="selecionarProcedimento(this, 'Escova & Hidratação')">
+                            <h3>Escova & Hidratação</h3>
+                            <p class="price">R$ 80</p>
+                        </div>
+                        <div class="card" onclick="var el=this; selecionarProcedimento(el, 'Alinhamento Orgânico')">
+                            <h3>Alinhamento Orgânico</h3>
+                            <p class="price">R$ 120+</p>
+                        </div>
+                        <div class="card" onclick="selecionarProcedimento(this, 'Mechas / Luzes')">
+                            <h3>Mechas / Luzes</h3>
+                            <p class="price">R$ 250</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formulário de agendamento -->
+                <section class="form-container">
+                    <p class="exclusive-text">✨ Atendimento exclusivo com a profissional, <strong>Anny Ferreira</strong></p>
+                    
+                    <form id="formAgendamento">
+                        <div class="input-group">
+                            <label>// IDENTIFICAÇÃO DO CLIENTE</label>
+                            <input type="text" id="nomeCliente" placeholder="INSIRA SEU NOME" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>// CANAL DE CONTATO (WHATSAPP)</label>
+                            <input type="tel" id="whatsCliente" placeholder="DDD + NÚMERO" required>
+                        </div>
+
+                        <div class="date-group">
+                            <div class="input-group">
+                                <label>// CRONOGRAMA DE DATA</label>
+                                <input type="text" id="diaAgendamento" placeholder="Dia (Ex: 15)" required>
+                            </div>
+                            <div class="input-group">
+                                <label>&nbsp;</label>
+                                <input type="text" id="mesAgendamento" placeholder="Mês (Ex: 05)" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">CONFIRMAR AGENDAMENTO</button>
+                    </form>
+                </section>
+            </main>
+        </div>
+
+        <!-- Onda de baixo -->
+        <div class="onda-recorte-rodape">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://w3.org">
+                <path d="M0,0 C300,70 600,-20 900,50 C1050,80 1150,40 1200,30 L1200,120 L0,120 Z" class="cor-da-onda-nude-rodape"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="rodape-bege-total">
+        <div class="conteudo-rodape">
+            <div class="links-sociais-rodape">
+                <a id="btnInstagram" class="link-social-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://w3.org"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    @annyglowstudio
+                </a>
+            </div>
+            <p class="copyright">© 2026 Studio Anny Glow. Todos os direitos reservados.</p>
+        </div>
+        <div class="preenchimento-bege-fim"></div>
+    </footer>
+
+    <!-- Lógica em JavaScript -->
+    <script>
+        let nomeProcedimentoEscolhido = "";
+
+        // Função para selecionar o procedimento
+        function selecionarProcedimento(cardElement, nomeProcedimento) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => card.classList.remove('selected'));
+            
+            cardElement.classList.add('selected');
+            nomeProcedimentoEscolhido = nomeProcedimento;
+        }
+
+        // Script para abrir o Instagram
+        document.getElementById('btnInstagram').addEventListener('click', function(e) {
+            e.preventDefault();
+            const appUrl = "instagram://user?username=annyglowstudio";
+            const webUrl = "https://instagram.com";
+            
+            window.location.href = appUrl;
+            setTimeout(function() {
+                window.open(webUrl, '_blank');
+            }, 400);
+        });
+
+        // Script para enviar o formulário pro WhatsApp
+        document.getElementById('formAgendamento').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            if (!nomeProcedimentoEscolhido) {
+                alert("Por favor, selecione um procedimento clicando em uma das caixinhas antes de agendar!");
+                return;
+            }
+            
+            const nome = document.getElementById('nomeCliente').value;
+            const dia = document.getElementById('diaAgendamento').value;
+            const mes = document.getElementById('mesAgendamento').value;
+            const telefoneStudio = "5592981112659";
+            
+            const mensagem = `Olá, Anny Ferreira! ✨ Acabei de visitar o seu site e quero muito agendar um horário com você. 💖\n\n` +
+                            `Meu nome é *${nome}*, escolhi o procedimento *${nomeProcedimentoEscolhido}* para o dia *${dia}/${mes}*. Quais horários você tem livres?`;
+            
+            const linkWhatsApp = `whatsapp://send?phone=${telefoneStudio}&text=${encodeURIComponent(mensagem)}`;
+            
+            window.location.href = linkWhatsApp;
+        });
+    </script>
+
+</body>
+</html>
